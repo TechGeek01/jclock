@@ -11,9 +11,11 @@ function startTime(){
   m=checkTime(m);
   s=checkTime(s);
   document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
+  if(h12>11&&h12<24){
+    var state="PM";
+  }
   if(h12>12){
     var h12=h12-12;
-    var state="PM";
   }
   document.getElementById('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
   t=setTimeout(function(){startTime()},500);
