@@ -10,12 +10,12 @@ function startTime(){
   var state="AM";
   m=checkTime(m);
   s=checkTime(s);
-  document.getElementByClassName('24clock').innerHTML=h24+":"+m+":"+s;
+  document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
   if(h12>12){
     var h12=h12-12;
     var state="PM";
   }
-  document.getElementByClassName('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
+  document.getElementById('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
   t=setTimeout(function(){startTime()},500);
 }
 
