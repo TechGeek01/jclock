@@ -1,5 +1,12 @@
-function startTime(){
+function setDate(){
   var today=new Date();
+  var month=today.getMonth();
+  var month=month+1
+  var date=today.getDate();
+  startTime();
+}
+
+function startTime(){
   var h24=today.getHours();
   var h12=today.getHours();
   var m=today.getMinutes();
