@@ -16,7 +16,7 @@ function startTime(){
   t=setTimeout(function(){startTime()},500);
 }
 
-function ReplaceContentInContainer(matchClass,content){
+function replaceContent(matchClass,content){
   var elems = document.getElementsByTagName('*'),i;
   for (i in elems){
     if((" "+elems[i].className+" ").indexOf(" "+matchClass+" ") > -1){
@@ -31,7 +31,8 @@ function checkTime(i){
   }
   return i;
 }
-
+/*
 window.onload = function(){
-  ReplaceContentInContainer("clock",h24+":"+m+":"+s);
+  replaceContent("clock",h24+":"+m+":"+s);
 }
+*/
