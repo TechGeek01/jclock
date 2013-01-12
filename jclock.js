@@ -10,7 +10,6 @@ function startTime(){
   m=checkTime(m);
   s=checkTime(s);
   document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
-  document.getElementsByClassName('24clock').innerHTML=h24+":"+m+":"+s;
   state=h12>11&&h12<24?"PM":"AM";
   h12=h12>12?h12-12:h12;
   document.getElementById('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
