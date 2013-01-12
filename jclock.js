@@ -1,7 +1,7 @@
 function startTime(){
   var today=new Date();
-  var month=today.getMonth();
-  var month=month+1
+  var year=today.getFullYear();
+  var month=today.getMonth()+1;
   var date=today.getDate();
   var year=today.getYear();
   var h24=today.getHours();
