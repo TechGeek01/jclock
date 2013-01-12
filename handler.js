@@ -1,11 +1,18 @@
 function startTime(){
   var today=new Date();
-  var h=today.getHours();
+  var htwentyfour=today.getHours();
+  var htwelve=today.getHours();
   var m=today.getMinutes();
   var s=today.getSeconds();
   m=checkTime(m);
   s=checkTime(s);
-  document.getElementById('clock'.innerHTML=h+":"+m+":"+s;
+  document.getElementById('24clock').innerHTML=htwentyfour+":"+m+":"+s;
+  var mnorev="A";
+  if (htwelve>13){
+    var htwelve=htwelve-12;
+    var mnorev="P";
+  }
+  document.getElementById('12clock').innerHTML=htwelve+":"+m+":"+s+" "+mnorev+"M";
   t=setTimeout(function(){startTime()},500);
 }
 
