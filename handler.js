@@ -3,6 +3,7 @@ function setDate(){
   var month=today.getMonth();
   var month=month+1
   var date=today.getDate();
+  var year=today.getYear();
   startTime();
 }
 
