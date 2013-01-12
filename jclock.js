@@ -10,8 +10,6 @@ function startTime(){
   m=checkTime(m);
   s=checkTime(s);
   document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
-  ReplaceContentInContainer("clock","Different Content");
-  replaceContentInContainer('.clock', h24+":"+m+":"+s);
   state=h12>11&&h12<24?"PM":"AM";
   h12=h12>12?h12-12:h12;
   document.getElementById('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
@@ -32,4 +30,8 @@ function checkTime(i){
     i="0"+i;
   }
   return i;
+}
+
+window.onload = function(){
+  ReplaceContentInContainer("clock",h24+":"+m+":"+s);
 }
