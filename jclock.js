@@ -7,16 +7,11 @@ function startTime(){
   var h12=today.getHours();
   var m=today.getMinutes();
   var s=today.getSeconds();
-  var state="AM";
   m=checkTime(m);
   s=checkTime(s);
   document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
-  if(h12>11&&h12<24){
-    var state="PM";
-  }
-  if(h12>12){
-    var h12=h12-12;
-  }
+  state=h12>11&&h12<24?"PM":"AM";
+  h12=h12>12?h12-12:h12;
   document.getElementById('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
   t=setTimeout(function(){startTime()},500);
 }
