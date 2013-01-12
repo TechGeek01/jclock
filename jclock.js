@@ -8,7 +8,6 @@ function startTime(){
   var h12=today.getHours();
   var m=today.getMinutes();
   var s=today.getSeconds();
-  //add a zero in front of numbers less than 10
   m=checkTime(m);
   s=checkTime(s);
   document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
