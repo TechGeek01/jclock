@@ -38,7 +38,6 @@ function replaceContent(matchClass,content){
   var elems=document.getElementsByTagName('*'),i;
   for(i in elems){
     if((" "+elems[i].className+" ").indexOf(" "+matchClass+" ")>-1){
-	  alert(i);
       elems[i].innerHTML=content;
     }
   }
