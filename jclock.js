@@ -17,10 +17,10 @@ function startTime(){
 }
 
 function replaceContent(matchClass,content){
-  var elems = document.getElementsByTagName('*'),i;
-  for (i in elems){
-    if((" "+elems[i].className+" ").indexOf(" "+matchClass+" ") > -1){
-      elems[i].innerHTML = content;
+  var elems=document.getElementsByTagName('*'),i;
+  for(i in elems){
+    if((" "+elems[i].className+" ").indexOf(" "+matchClass+" ")>-1){
+      elems[i].innerHTML=content;
     }
   }
 }
@@ -31,8 +31,3 @@ function checkTime(i){
   }
   return i;
 }
-/*
-window.onload = function(){
-replaceContent("clock",h24+":"+m+":"+s);
-}
-*/
