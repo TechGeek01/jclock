@@ -20,6 +20,11 @@ function startTime(){
 }
 
 /*
+Clock types
+- 24-hour
+- 12-hour
+
+
 function clockType(i){
   if(i="24hour"){
     content=h24+":"+m+":"+s;
