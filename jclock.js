@@ -19,10 +19,21 @@ function startTime(){
   t=setTimeout(function(){startTime()},500);
 }
 
+/*
+function clockType(i){
+  if(i="24hour"){
+    content=h24+":"+m+":"+s;
+  }else if(i="12hour"){
+    content=h12+":"+m+":"+s+" "+state;
+  }
+}
+*/
+
 function replaceContent(matchClass,content){
   var elems=document.getElementsByTagName('*'),i;
   for(i in elems){
     if((" "+elems[i].className+" ").indexOf(" "+matchClass+" ")>-1){
+	  alert(i);
       elems[i].innerHTML=content;
     }
   }
