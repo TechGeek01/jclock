@@ -5,12 +5,15 @@ function startTime(){
   var date=today.getDate();
   var h24=today.getHours();
   var h12=today.getHours();
-  var m=today.getMinutes();
-  var s=today.getSeconds();
-  m=checkTime(m);
-  s=checkTime(s);
-  state=h12>11&&h12<24?"PM":"AM";
-  h12=h12>12?h12-12:h12;
+  var m=checkTime(today.getMinutes());
+  var s=checkTime(today.getSeconds());
+  var state="AM";
+  if(h12>11&&h12<24){
+    state="PM";
+  }
+  if(h12>12){
+    h12=h12-12;
+  }
   replaceContent("24clock",h24+":"+m+":"+s);
   replaceContent("12clock",h12+":"+m+":"+s+" "+state);
   t=setTimeout(function(){startTime()},500);
