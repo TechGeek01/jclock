@@ -9,7 +9,7 @@ function startTime(){
   var s=today.getSeconds();
   m=checkTime(m);
   s=checkTime(s);
-  replaceContent("clock",h24+":"+m+":"+s);
+  //replaceContent("24clock",h24+":"+m+":"+s);
   document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
   state=h12>11&&h12<24?"PM":"AM";
   h12=h12>12?h12-12:h12;
