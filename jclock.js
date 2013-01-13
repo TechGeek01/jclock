@@ -9,11 +9,10 @@ function startTime(){
   var s=today.getSeconds();
   m=checkTime(m);
   s=checkTime(s);
-  //replaceContent("24clock",h24+":"+m+":"+s);
-  document.getElementById('24clock').innerHTML=h24+":"+m+":"+s;
   state=h12>11&&h12<24?"PM":"AM";
   h12=h12>12?h12-12:h12;
-  document.getElementById('12clock').innerHTML=h12+":"+m+":"+s+" "+state;
+  replaceContent("24clock",h24+":"+m+":"+s);
+  replaceContent("12clock",h12+":"+m+":"+s+" "+state);
   t=setTimeout(function(){startTime()},500);
 }
 
@@ -34,6 +33,6 @@ function checkTime(i){
 }
 /*
 window.onload = function(){
-  replaceContent("clock",h24+":"+m+":"+s);
+replaceContent("clock",h24+":"+m+":"+s);
 }
 */
