@@ -1,4 +1,5 @@
 function initialSet(){
+  var currentVersion=0.6;
   var today=new Date;
   var staticYear=today.getFullYear();
   var staticMonth=today.getMonth();
