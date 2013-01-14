@@ -1,3 +1,4 @@
+//Main config
 function initialSet(){
   var currentVersion=0.6;
   var today=new Date;
@@ -43,3 +44,13 @@ function checkTime(i){
   }
   return i;
 }
+
+function viewport(i){
+  if(i="width"){
+    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  }else if(i="height"){
+    return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+  }
+}
+
+//Extras
