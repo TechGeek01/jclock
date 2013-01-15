@@ -73,39 +73,20 @@ function extras(){
   var verticalFloatPos2=verticalFloatPos.toString();
   var verticalFloatPos3=verticalFloatPos2+"px";
   try{
-    document.getElementById("float24clock").style.fontSize="50px";
-    document.getElementById("float24clock").style.color="#ffffff";
-    document.getElementById("float24clock").style.fontFamily="arial";
-    document.getElementById("float24clock").style.position="fixed";
+    document.getElementById("float24clock").style.cssText="font-size:50px;color:#ffffff;font-family:arial;position:fixed;left:10px;z-index:200;";
     document.getElementById("float24clock").style.top=verticalFloatPos3;
-    document.getElementById("float24clock").style.left="10px";
-    document.getElementById("float24clock").style.zIndex="200";
   }catch(err){}
   try{
-    document.getElementById("float12clock").style.fontSize="50px";
-    document.getElementById("float12clock").style.color="#ffffff";
-    document.getElementById("float12clock").style.fontFamily="arial";
-    document.getElementById("float12clock").style.position="fixed";
+    document.getElementById("float12clock").style.cssText="font-size:50px;color:#ffffff;font-family:arial;position:fixed;left:10px;z-index:200;";
     document.getElementById("float12clock").style.top=verticalFloatPos3;
-    document.getElementById("float12clock").style.left="10px";
-    document.getElementById("float12clock").style.zIndex="200";
   }catch(err){}
   try{
-    document.getElementById("float24clockdark").style.fontSize="50px";
-    document.getElementById("float24clockdark").style.color="#000000";
-    document.getElementById("float24clockdark").style.fontFamily="arial";
-    document.getElementById("float24clockdark").style.position="fixed";
+    document.getElementById("float24clockdark").style.cssText="font-size:50px;color:#000000;font-family:arial;position:fixed;left:10px;z-index:200;";
     document.getElementById("float24clockdark").style.top=verticalFloatPos3;
-    document.getElementById("float24clockdark").style.left="10px";
-    document.getElementById("float24clockdark").style.zIndex="200";
   }catch(err){}
   try{
-    document.getElementById("float12clockdark").style.fontSize="50px";
-    document.getElementById("float12clockdark").style.color="#000000";
-    document.getElementById("float12clockdark").style.fontFamily="arial";
-    document.getElementById("float12clockdark").style.position="fixed";
+    document.getElementById("float12clockdark").style.cssText="font-size:50px;color:#000000;font-family:arial;position:fixed;left:10px;z-index:200;";
     document.getElementById("float12clockdark").style.top=verticalFloatPos3;
-    document.getElementById("float12clockdark").style.left="10px";
-    document.getElementById("float12clockdark").style.zIndex="200";
   }catch(err){}
+  
 }
