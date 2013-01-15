@@ -5,7 +5,6 @@ function initialSet(){
   var staticYear=today.getFullYear();
   var staticMonth=today.getMonth();
   var staticDate=today.getDate();
-  extras();
   startTime();
 }
 
@@ -19,7 +18,7 @@ function startTime(){
   var m=checkTime(today.getMinutes());
   var s=checkTime(today.getSeconds());
   var state="AM";
-  if (h12>11 && h12<24){
+  if (h12>11){
     state="PM";
   }
   if (h12>12){
@@ -69,6 +68,7 @@ function extras(){
   var float24dark=document.getElementById("float24clockdark");
   var float12dark=document.getElementById("float12clockdark");
   float24.style.fontSize="50px";
+  document.getElementById("debug").innerHTML="1";
   float24.style.color="#ffffff";
   float24.style.fontFamily="arial";
   float24.style.position="fixed";
