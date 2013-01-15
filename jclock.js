@@ -1,10 +1,11 @@
 //Main config
 function initialSet(){
-  var currentVersion=0.6;
+  var currentVersion=1.0;
   var today=new Date;
   var staticYear=today.getFullYear();
   var staticMonth=today.getMonth();
   var staticDate=today.getDate();
+  extras();
   startTime();
 }
 
@@ -24,8 +25,12 @@ function startTime(){
   if (h12>12){
     h12=h12-12;
   }
-  replaceContent("24clock", h24+":"+m+":"+s);
-  replaceContent("12clock", h12+":"+m+":"+s+" "+state);
+  document.getElementById("float24clock").innerHTML=h24+":"+m;
+  document.getElementById("float12clock").innerHTML=h12+":"+m+" "+state;
+  document.getElementById("float24clockdark").innerHTML=h24+":"+m;
+  document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;
+  replaceContent("24clock",h24+":"+m+":"+s);
+  replaceContent("12clock",h12+":"+m+":"+s+" "+state);
   t=setTimeout(function (){startTime();},500);
 }
 
@@ -54,3 +59,41 @@ function viewport(i){
 }
 
 //Extras
+function extras(){
+  var viewportHeight=viewport("height");
+  var verticalFloatPos=viewportHeight-59;
+  var verticalFloatPos=verticalFloatPos.toString();
+  var verticalFloatPos=verticalFloatPos+"px";
+  var float24=document.getElementById("float24clock");
+  var float12=document.getElementById("float12clock");
+  var float24dark=document.getElementById("float24clockdark");
+  var float12dark=document.getElementById("float12clockdark");
+  float24.style.fontSize="50px";
+  float24.style.color="#ffffff";
+  float24.style.fontFamily="arial";
+  float24.style.position="fixed";
+  float24.style.top=verticalFloatPos;
+  float24.style.left="0px";
+  float24.style.zIndex="200";
+  float12.style.fontSize="50px";
+  float12.style.color="#ffffff";
+  float12.style.fontFamily="arial";
+  float12.style.position="fixed";
+  float12.style.top=verticalFloatPos;
+  float12.style.left="0px";
+  float12.style.zIndex="200";
+  float24dark.style.fontSize="50px";
+  float24dark.style.color="#000000";
+  float24dark.style.fontFamily="arial";
+  float24dark.style.position="fixed";
+  float24dark.style.top=verticalFloatPos;
+  float24dark.style.left="0px";
+  float24dark.style.zIndex="200";
+  float12dark.style.fontSize="50px";
+  float12dark.style.color="#000000";
+  float12dark.style.fontFamily="arial";
+  float12dark.style.position="fixed";
+  float12dark.style.top=verticalFloatPos;
+  float12dark.style.left="0px";
+  float12dark.style.zIndex="200";
+}
