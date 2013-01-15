@@ -72,44 +72,40 @@ function extras(){
   var verticalFloatPos=viewportHeight-59;
   var verticalFloatPos2=verticalFloatPos.toString();
   var verticalFloatPos3=verticalFloatPos2+"px";
-  var float24clock=document.getElementById("float24clock");
-  var float12clock=document.getElementById("float12clock");
-  var float24clock2=document.getElementById("float24clockdark");
-  var float12clock2=document.getElementById("float12clockdark");
   try{
-    float24clock.style.fontSize="50px";
-    float24clock.style.color="#ffffff";
-    float24clock.style.fontFamily="arial";
-    float24clock.style.position="fixed";
-    float24clock.style.top=verticalFloatPos3;
-    float24clock.style.left="10px";
-    float24clock.style.zIndex="200";
+    document.getElementById("float24clock").style.fontSize="50px";
+    document.getElementById("float24clock").style.color="#ffffff";
+    document.getElementById("float24clock").style.fontFamily="arial";
+    document.getElementById("float24clock").style.position="fixed";
+    document.getElementById("float24clock").style.top=verticalFloatPos3;
+    document.getElementById("float24clock").style.left="10px";
+    document.getElementById("float24clock").style.zIndex="200";
   }catch(err){}
   try{
-    float24clock.style.fontSize="50px";
-    float24clock.style.color="#ffffff";
-    float24clock.style.fontFamily="arial";
-    float24clock.style.position="fixed";
-    float24clock.style.top=verticalFloatPos3;
-    float24clock.style.left="10px";
-    float24clock.style.zIndex="200";
+    document.getElementById("float12clock").style.fontSize="50px";
+    document.getElementById("float12clock").style.color="#ffffff";
+    document.getElementById("float12clock").style.fontFamily="arial";
+    document.getElementById("float12clock").style.position="fixed";
+    document.getElementById("float12clock").style.top=verticalFloatPos3;
+    document.getElementById("float12clock").style.left="10px";
+    document.getElementById("float12clock").style.zIndex="200";
   }catch(err){}
   try{
-    float24clock.style.fontSize="50px";
-    float24clock.style.color="#000000";
-    float24clock.style.fontFamily="arial";
-    float24clock.style.position="fixed";
-    float24clock.style.top=verticalFloatPos3;
-    float24clock.style.left="10px";
-    float24clock.style.zIndex="200";
+    document.getElementById("float24clockdark").style.fontSize="50px";
+    document.getElementById("float24clockdark").style.color="#000000";
+    document.getElementById("float24clockdark").style.fontFamily="arial";
+    document.getElementById("float24clockdark").style.position="fixed";
+    document.getElementById("float24clockdark").style.top=verticalFloatPos3;
+    document.getElementById("float24clockdark").style.left="10px";
+    document.getElementById("float24clockdark").style.zIndex="200";
   }catch(err){}
   try{
-    float24clock.style.fontSize="50px";
-    float24clock.style.color="#000000";
-    float24clock.style.fontFamily="arial";
-    float24clock.style.position="fixed";
-    float24clock.style.top=verticalFloatPos3;
-    float24clock.style.left="10px";
-    float24clock.style.zIndex="200";
+    document.getElementById("float12clockdark").style.fontSize="50px";
+    document.getElementById("float12clockdark").style.color="#000000";
+    document.getElementById("float12clockdark").style.fontFamily="arial";
+    document.getElementById("float12clockdark").style.position="fixed";
+    document.getElementById("float12clockdark").style.top=verticalFloatPos3;
+    document.getElementById("float12clockdark").style.left="10px";
+    document.getElementById("float12clockdark").style.zIndex="200";
   }catch(err){}
 }
