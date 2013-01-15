@@ -78,7 +78,7 @@ function extras(){
   document.getElementById("float24clock").style.fontFamily="arial";
   document.getElementById("float24clock").style.position="fixed";
   document.getElementById("float24clock").style.top=verticalFloatPos3;
-  document.getElementById("float24clock").style.left="0px";
+  document.getElementById("float24clock").style.left="10px";
   document.getElementById("float24clock").style.zIndex="200";
   }catch(err){}
   try{
@@ -87,7 +87,7 @@ function extras(){
   document.getElementById("float12clock").style.fontFamily="arial";
   document.getElementById("float12clock").style.position="fixed";
   document.getElementById("float12clock").style.top=verticalFloatPos3;
-  document.getElementById("float12clock").style.left="0px";
+  document.getElementById("float12clock").style.left="10px";
   document.getElementById("float12clock").style.zIndex="200";
   }catch(err){}
   try{
@@ -96,7 +96,7 @@ function extras(){
   document.getElementById("float24clockdark").style.fontFamily="arial";
   document.getElementById("float24clockdark").style.position="fixed";
   document.getElementById("float24clockdark").style.top=verticalFloatPos3;
-  document.getElementById("float24clockdark").style.left="0px";
+  document.getElementById("float24clockdark").style.left="10px";
   document.getElementById("float24clockdark").style.zIndex="200";
   }catch(err){}
   try{
@@ -105,7 +105,7 @@ function extras(){
   document.getElementById("float12clockdark").style.fontFamily="arial";
   document.getElementById("float12clockdark").style.position="fixed";
   document.getElementById("float12clockdark").style.top=verticalFloatPos3;
-  document.getElementById("float12clockdark").style.left="0px";
+  document.getElementById("float12clockdark").style.left="10px";
   document.getElementById("float12clockdark").style.zIndex="200";
   }catch(err){}
 }
