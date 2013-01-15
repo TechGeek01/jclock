@@ -5,6 +5,7 @@ function initialSet(){
   var staticYear=today.getFullYear();
   var staticMonth=today.getMonth();
   var staticDate=today.getDate();
+  //extras();
   startTime();
 }
 
@@ -24,10 +25,10 @@ function startTime(){
   if (h12>12){
     h12=h12-12;
   }
-  document.getElementById("float24clock").innerHTML=h24+":"+m;
-  document.getElementById("float12clock").innerHTML=h12+":"+m+" "+state;
-  document.getElementById("float24clockdark").innerHTML=h24+":"+m;
-  document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;
+  //document.getElementById("float24clock").innerHTML=h24+":"+m;
+  //document.getElementById("float12clock").innerHTML=h12+":"+m+" "+state;
+  //document.getElementById("float24clockdark").innerHTML=h24+":"+m;
+  //document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;
   replaceContent("24clock",h24+":"+m+":"+s);
   replaceContent("12clock",h12+":"+m+":"+s+" "+state);
   t=setTimeout(function (){startTime();},500);
