@@ -1,11 +1,11 @@
 //Main config
 function initialSet(){
   var currentVersion=1.0;
-  var today=new Date;
+  var today=new Date();
   var staticYear=today.getFullYear();
   var staticMonth=today.getMonth();
   var staticDate=today.getDate();
-  //extras();
+  extras();
   startTime();
 }
 
@@ -25,10 +25,18 @@ function startTime(){
   if (h12>12){
     h12=h12-12;
   }
-  //document.getElementById("float24clock").innerHTML=h24+":"+m;
-  //document.getElementById("float12clock").innerHTML=h12+":"+m+" "+state;
-  //document.getElementById("float24clockdark").innerHTML=h24+":"+m;
-  //document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;
+  try{
+    document.getElementById("float24clock").innerHTML=h24+":"+m;
+  }catch(err){}
+  try{
+    document.getElementById("float12clock").innerHTML=h12+":"+m+" "+state;
+  }catch(err){}
+  try{
+    document.getElementById("float24clockdark").innerHTML=h24+":"+m;
+  }catch(err){}
+  try{
+    document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;
+  }catch(err){}
   replaceContent("24clock",h24+":"+m+":"+s);
   replaceContent("12clock",h12+":"+m+":"+s+" "+state);
   t=setTimeout(function (){startTime();},500);
@@ -51,9 +59,9 @@ function checkTime(i){
 }
 
 function viewport(i){
-  if(i="width"){
+  if(i==="width"){
     return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  }else if(i="height"){
+  }else if(i==="height"){
     return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   }
 }
@@ -62,39 +70,42 @@ function viewport(i){
 function extras(){
   var viewportHeight=viewport("height");
   var verticalFloatPos=viewportHeight-59;
-  var verticalFloatPos=verticalFloatPos.toString();
-  var verticalFloatPos=verticalFloatPos+"px";
-  var float24=document.getElementById("float24clock");
-  var float12=document.getElementById("float12clock");
-  var float24dark=document.getElementById("float24clockdark");
-  var float12dark=document.getElementById("float12clockdark");
-  float24.style.fontSize="50px";
-  document.getElementById("debug").innerHTML="1";
-  float24.style.color="#ffffff";
-  float24.style.fontFamily="arial";
-  float24.style.position="fixed";
-  float24.style.top=verticalFloatPos;
-  float24.style.left="0px";
-  float24.style.zIndex="200";
-  float12.style.fontSize="50px";
-  float12.style.color="#ffffff";
-  float12.style.fontFamily="arial";
-  float12.style.position="fixed";
-  float12.style.top=verticalFloatPos;
-  float12.style.left="0px";
-  float12.style.zIndex="200";
-  float24dark.style.fontSize="50px";
-  float24dark.style.color="#000000";
-  float24dark.style.fontFamily="arial";
-  float24dark.style.position="fixed";
-  float24dark.style.top=verticalFloatPos;
-  float24dark.style.left="0px";
-  float24dark.style.zIndex="200";
-  float12dark.style.fontSize="50px";
-  float12dark.style.color="#000000";
-  float12dark.style.fontFamily="arial";
-  float12dark.style.position="fixed";
-  float12dark.style.top=verticalFloatPos;
-  float12dark.style.left="0px";
-  float12dark.style.zIndex="200";
+  var verticalFloatPos2=verticalFloatPos.toString();
+  var verticalFloatPos3=verticalFloatPos2+"px";
+  try{
+  document.getElementById("float24clock").style.fontSize="50px";
+  document.getElementById("float24clock").style.color="#ffffff";
+  document.getElementById("float24clock").style.fontFamily="arial";
+  document.getElementById("float24clock").style.position="fixed";
+  document.getElementById("float24clock").style.top=verticalFloatPos3;
+  document.getElementById("float24clock").style.left="0px";
+  document.getElementById("float24clock").style.zIndex="200";
+  }catch(err){}
+  try{
+  document.getElementById("float12clock").style.fontSize="50px";
+  document.getElementById("float12clock").style.color="#ffffff";
+  document.getElementById("float12clock").style.fontFamily="arial";
+  document.getElementById("float12clock").style.position="fixed";
+  document.getElementById("float12clock").style.top=verticalFloatPos3;
+  document.getElementById("float12clock").style.left="0px";
+  document.getElementById("float12clock").style.zIndex="200";
+  }catch(err){}
+  try{
+  document.getElementById("float24clockdark").style.fontSize="50px";
+  document.getElementById("float24clockdark").style.color="#000000";
+  document.getElementById("float24clockdark").style.fontFamily="arial";
+  document.getElementById("float24clockdark").style.position="fixed";
+  document.getElementById("float24clockdark").style.top=verticalFloatPos3;
+  document.getElementById("float24clockdark").style.left="0px";
+  document.getElementById("float24clockdark").style.zIndex="200";
+  }catch(err){}
+  try{
+  document.getElementById("float12clockdark").style.fontSize="50px";
+  document.getElementById("float12clockdark").style.color="#000000";
+  document.getElementById("float12clockdark").style.fontFamily="arial";
+  document.getElementById("float12clockdark").style.position="fixed";
+  document.getElementById("float12clockdark").style.top=verticalFloatPos3;
+  document.getElementById("float12clockdark").style.left="0px";
+  document.getElementById("float12clockdark").style.zIndex="200";
+  }catch(err){}
 }
