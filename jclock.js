@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.0 rev. 6   *
+*   jClock v1.0.1 rev. 1   *
 *          1-6-13          *
 ***************************/
 
@@ -9,10 +9,6 @@ function initialSet(){
   var staticYear=today.getFullYear();
   var staticMonth=today.getMonth();
   var staticDate=today.getDate();
-  floatStyle("float24clock");
-  floatStyle("float12clock");
-  floatStyle("float24clockdark");
-  floatStyle("float12clockdark");
   startTime();
 }
 
@@ -38,6 +34,10 @@ function startTime(){
   try{document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;}catch(err){}
   replaceContent("24clock",h24+":"+m+":"+s);
   replaceContent("12clock",h12+":"+m+":"+s+" "+state);
+  floatStyle("float24clock");
+  floatStyle("float12clock");
+  floatStyle("float24clockdark");
+  floatStyle("float12clockdark");
   t=setTimeout(function (){startTime();},500);
 }
 
