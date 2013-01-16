@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.1 rev. 2   *
+*   jClock v1.0.1 rev. 3   *
 *          1-6-13          *
 ***************************/
 
@@ -59,9 +59,9 @@ function checkTime(i){
 
 function viewport(i){
   if(i==="width"){
-    return document.documentElement.clientWidth || window.innerWidth || document.body.clientWidth;
+    return document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
   }else if(i==="height"){
-    return  document.documentElement.clientHeight ||window.innerHeight || document.body.clientHeight;
+    return  document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight;
   }
 }
 
