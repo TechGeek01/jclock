@@ -1,3 +1,8 @@
+/***************************
+*   jClock v1.0.0 rev. 5   *
+*          1-6-13          *
+***************************/
+
 function initialSet(){
   var currentVersion=1.0;
   var today=new Date();
