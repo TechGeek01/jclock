@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.0 rev. 5   *
+*   jClock v1.0.0 rev. 6   *
 *          1-6-13          *
 ***************************/
 
@@ -68,8 +68,8 @@ function viewport(i){
 function floatStyle(i){
   var viewportHeight=viewport("height");
   var verticalFloatPos=viewportHeight-59;
-  var verticalFloatPos2=verticalFloatPos.toString();
+  verticalFloatPos=verticalFloatPos.toString();
   var clockColor="000000";
-  if(i==="float24clock"||i==="float12clock"){var clockColor="ffffff";}
-  try{return document.getElementById(i).style.cssText="font-size:50px;color:#"+clockColor+";font-family:arial;position:fixed;top:"+verticalFloatPos2+"px;left:10px;z-index:200;";}catch(err){}
+  if(i==="float24clock"||i==="float12clock"){clockColor="ffffff";}
+  try{return document.getElementById(i).style.cssText="font-size:50px;color:#"+clockColor+";font-family:arial;position:fixed;top:"+verticalFloatPos+"px;left:10px;z-index:200;";}catch(err){}
 }
