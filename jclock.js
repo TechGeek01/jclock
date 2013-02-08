@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.4 rev. 1   *
+*   jClock v1.0.5 rev. 0   *
 *          2-7-13          *
 ***************************/
 
@@ -9,6 +9,19 @@
   var staticYear = today.getFullYear();
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
+  
+  var jClockFooter = document.createElement("div");
+  jClockFooter.id = "jclockfooter";
+  var jClockLink = document.createElement("a");
+  jClockLink.setAttribute("href","http://www.techgeek01.com");
+  jClockLink.setAttribute("target","_blank");
+  jClockLink.innerHTML = "jClock";
+  jClockVersion = document.createElement("span");
+  jClockVersion.id = "jclockver";
+  jClockVersion.innerHTML = " v1.0.5";
+  document.body.appendChild(jClockFooter);
+  document.getElementById("jclockfooter").appendChild(jClockLink);
+  document.getElementById("jclockfooter").appendChild(jClockVersion);
   
   startTime();
 
