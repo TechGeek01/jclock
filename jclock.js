@@ -5,7 +5,7 @@
 
 function initialSet(){
   try{
-    var jClockFooter = document.createElement("span");
+    var jClockFooter = document.createElement("p");
     jClockFooter.id = "jclockfooter";
     var jClockLink = document.createElement("a");
     jClockLink.innerHTML = "jClock";
