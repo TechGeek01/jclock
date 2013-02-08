@@ -1,23 +1,30 @@
 /***************************
-*   jClock v1.0.6 rev. 4   *
+*   jClock v1.0.6 rev. 5   *
 *          2-7-13          *
 ***************************/
 
 function initialSet(){
-  var jClockFooter = document.createElement("div");
-  jClockFooter.id = "jclockfooter";
-  var jClockLink = document.createElement("a");
-  jClockLink.innerHTML = "jClock";
-  jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
-  jClockLink.setAttribute("target", "_blank");
-  var jClockVersion = document.createElement("span");
-  jClockVersion.innerHTML = " v1.0.5";
-  document.body.appendChild(jClockFooter);
   try{
+    var jClockFooter = document.createElement("span");
+    jClockFooter.id = "jclockfooter";
+    var jClockLink = document.createElement("a");
+    jClockLink.innerHTML = "jClock";
+    jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
+    jClockLink.setAttribute("target", "_blank");
+    var jClockVersion = document.createElement("span");
+    jClockVersion.innerHTML = " v1.0.5";
     document.getElementById("footer").appendChild(jClockFooter);
     document.getElementById("jclockfooter").appendChild(jClockLink);
     document.getElementById("jclockfooter").appendChild(jClockVersion);
   } catch (err){
+    var jClockFooter = document.createElement("div");
+    jClockFooter.id = "jclockfooter";
+    var jClockLink = document.createElement("a");
+    jClockLink.innerHTML = "jClock";
+    jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
+    jClockLink.setAttribute("target", "_blank");
+    var jClockVersion = document.createElement("span");
+    jClockVersion.innerHTML = " v1.0.5";
     document.body.appendChild(jClockFooter);
     document.getElementById("jclockfooter").appendChild(jClockLink);
     document.getElementById("jclockfooter").appendChild(jClockVersion);
