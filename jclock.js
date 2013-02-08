@@ -12,7 +12,9 @@
   
   var jClockFooter = document.createElement("div");
   var jClockLink = document.createElement("a");
+  jClockLink.innerHTML = "jClock";
   var jClockVersion = document.createElement("span");
+  jClockVersion.innerHTML = " v1.0.5";
   
   startTime();
 
