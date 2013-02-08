@@ -1,14 +1,15 @@
 /***************************
-*   jClock v1.0.4 rev. 0   *
+*   jClock v1.0.4 rev. 1   *
 *          2-7-13          *
 ***************************/
 
 (function(){
-  //Calculate static date and start clocks
+  //Set static variables and start clock
   var today = new Date();
   var staticYear = today.getFullYear();
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
+  
   startTime();
 
   //Calculate and set clock times
@@ -49,6 +50,7 @@
     t = setTimeout(function (){startTime();},500);
   }
 
+  //Change the innerHTML of any item with class matchClass to content
   function replaceContent(matchClass, content){
     var elems = document.getElementsByTagName('*'),i;
     for (i in elems){
@@ -58,6 +60,7 @@
     }
   }
 
+  //Add 0 in front of minutes and seconds less than 10
   function checkTime(i){
     if (i < 10){
       i = "0"+i;
@@ -65,6 +68,7 @@
     return i;
   }
 
+  //Detect the veiwport dimmensions in-browser
   function viewport(i){
     if (i === "width"){
       return document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
@@ -73,6 +77,7 @@
     }
   }
 
+  //Process the floating clock types
   function floatStyle(i){
     var viewportHeight = viewport("height");
     var verticalFloatPos = viewportHeight-59;
