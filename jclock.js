@@ -4,7 +4,7 @@
 ***************************/
 
 //Deprecated
-function initialSet();
+function initialSet(){};
 
 //Immediately set variables and run clocka
 (function(){
