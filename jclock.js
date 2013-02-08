@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.2 rev. 1   *
+*   jClock v1.0.2 rev. 3   *
 *          2-7-13          *
 ***************************/
 
@@ -58,16 +58,19 @@ function checkTime(i){
   return i;
 }
 
-var viewport = {
-  width: document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth,
-  height: document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight
-};
+function viewport(i){
+  if (i === "width"){
+    return document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
+  } else if (i === "height"){
+    document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight
+  }
+}
 
 function floatStyle(i){
-  var viewportHeight=viewport.height;
-  var verticalFloatPos=viewportHeight-59;
-  verticalFloatPos=verticalFloatPos.toString();
-  var clockColor="000000";
-  if(i==="float24clock"||i==="float12clock"){clockColor="ffffff";}
-  try{return document.getElementById(i).style.cssText="font-size:50px;color:#"+clockColor+";font-family:arial;position:fixed;top:"+verticalFloatPos+"px;left:10px;z-index:200;";}catch(err){}
+  var viewportHeight = viewport("height");
+  var verticalFloatPos = viewportHeight-59;
+  verticalFloatPos = verticalFloatPos.toString();
+  var clockColor = "000000";
+  if(i === "float24clock"||i === "float12clock"){clockColor = "ffffff";}
+  try{document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";}catch(err){}
 }
