@@ -10,17 +10,7 @@
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
   
-  var jClockFooter = document.createElement("div");
-  jClockFooter.id = "jclockfooter";
-  var jClockLink = document.createElement("a");
-  jClockLink.setAttribute("href","http://www.techgeek01.com");
-  jClockLink.setAttribute("target","_blank");
-  jClockLink.innerHTML = "jClock";
-  var jClockVersion = document.createElement("span");
-  jClockVersion.innerHTML = " v1.0.5";
-  document.body.appendChild(jClockFooter);
-  document.getElementById("jclockfooter").appendChild(jClockLink);
-  document.getElementById("jclockfooter").appendChild(jClockVersion);
+
   
   startTime();
 
