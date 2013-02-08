@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.2 rev. 4   *
+*   jClock v1.0.2 rev. 5   *
 *          2-7-13          *
 ***************************/
 
@@ -70,12 +70,9 @@ function floatStyle(i){
   var viewportHeight = viewport("height");
   var verticalFloatPos = viewportHeight-59;
   verticalFloatPos = verticalFloatPos.toString();
-  var clockColor = function (){
-    if (i === "float24clock" || i === "float12clock"){
-      return "ffffff";
-    } else if (i === "float24clockdark" || i === "float12clockdark"){
-      return "000000";
-    }
-  };
+  var clockColor = "000000";
+  if (i === "float24clock" || i === "float12clock"){
+    clockColor "ffffff";
+  }
   try{document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";}catch(err){}
 }
