@@ -3,17 +3,14 @@
 *          2-7-13          *
 ***************************/
 
-//Deprecated
-function initialSet(){};
-
-//Immediately set variables and run clocka
-(function(){
+//Calculate static date and start clocks
+function initialSet(){
   var today = new Date();
   var staticYear = today.getFullYear();
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
   startTime();
-})();
+}
 
 //Calculate and set clock times
 function startTime(){
