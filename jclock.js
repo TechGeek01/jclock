@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.2 rev. 3   *
+*   jClock v1.0.3 rev. 0   *
 *          2-7-13          *
 ***************************/
 
@@ -29,10 +29,12 @@ function startTime(){
   if (h12 > 12){
     h12 = h12 - 12;
   }
-  try{document.getElementById("float24clock").innerHTML = h24 + ":" + m;}catch(err){}
-  try{document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;}catch(err){}
-  try{document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;}catch(err){}
-  try{document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;}catch(err){}
+  try {
+    document.getElementById("float24clock").innerHTML = h24 + ":" + m;
+    document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;
+    document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;
+    document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
+  } catch (err){}
   replaceContent("24clock",h24 + ":" + m +":" + s);
   replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
   floatStyle("float24clock");
@@ -74,5 +76,7 @@ function floatStyle(i){
   if(i === "float24clock" || i === "float12clock"){
     clockColor = "ffffff";
   }
-  try{document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";}catch(err){}
+  try{
+    document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
+  } catch (err){}
 }
