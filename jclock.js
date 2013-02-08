@@ -1,10 +1,7 @@
 /***************************
-*   jClock v1.0.3 rev. 2   *
+*   jClock v1.0.4 rev. 0   *
 *          2-7-13          *
 ***************************/
-
-//Deprecated
-function initialSet(){};
 
 (function(){
   //Calculate static date and start clocks
