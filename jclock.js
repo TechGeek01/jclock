@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.5 rev. 2   *
+*   jClock v1.0.5 rev. 4   *
 *          2-7-13          *
 ***************************/
 
@@ -10,7 +10,9 @@
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
   
-
+  var jClockFooter = document.createElement("div");
+  var jClockLink = document.createElement("a");
+  var jClockVersion = document.createElement("span");
   
   startTime();
 
