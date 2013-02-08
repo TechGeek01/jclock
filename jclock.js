@@ -15,7 +15,7 @@ function initialSet(){
   document.body.appendChild(jClockFooter);
   document.getElementById("jclockfooter").appendChild(jClockLink);
   document.getElementById("jclockfooter").appendChild(jClockVersion);
-  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;background:rgba(255, 255, 255, .5);";
+  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;background:rgba(255, 255, 255, .5);height:20px;";
 }
 
 (function(){
