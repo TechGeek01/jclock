@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.3 rev. 0   *
+*   jClock v1.0.3 rev. 1   *
 *          2-7-13          *
 ***************************/
 
@@ -31,8 +31,14 @@ function startTime(){
   }
   try {
     document.getElementById("float24clock").innerHTML = h24 + ":" + m;
+  } catch (err){}
+  try {
     document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;
+  } catch (err){}
+  try {
     document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;
+  } catch (err){}
+  try {
     document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
   } catch (err){}
   replaceContent("24clock",h24 + ":" + m +":" + s);
