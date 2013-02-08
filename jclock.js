@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.6 rev. 1   *
+*   jClock v1.0.6 rev. 4   *
 *          2-7-13          *
 ***************************/
 
@@ -15,7 +15,7 @@ function initialSet(){
   document.body.appendChild(jClockFooter);
   document.getElementById("jclockfooter").appendChild(jClockLink);
   document.getElementById("jclockfooter").appendChild(jClockVersion);
-  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;background:rgba(255, 255, 255, .5);height:20px;";
+  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
 }
 
 (function(){
