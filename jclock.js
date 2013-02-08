@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.5 rev. 6   *
+*   jClock v1.0.5 rev. 7   *
 *          2-7-13          *
 ***************************/
 
@@ -12,10 +12,12 @@
   
   var jClockFooter = document.createElement("div");
   var jClockLink = document.createElement("a");
+  jClockLink.id = "jclocklink";
   jClockLink.innerHTML = "jClock";
   jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
   jClockLink.setAttribute("target", "_blank");
   var jClockVersion = document.createElement("span");
+  jClockVersion.id = "jclockversion";
   jClockVersion.innerHTML = " v1.0.5";
   
   startTime();
