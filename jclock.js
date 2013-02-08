@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.5 rev. 7   *
+*   jClock v1.0.5 rev. 8   *
 *          2-7-13          *
 ***************************/
 
@@ -11,6 +11,7 @@
   var staticDate = today.getDate();
   
   var jClockFooter = document.createElement("div");
+  jClockFooter.id = "jclockfooter";
   var jClockLink = document.createElement("a");
   jClockLink.id = "jclocklink";
   jClockLink.innerHTML = "jClock";
@@ -19,6 +20,7 @@
   var jClockVersion = document.createElement("span");
   jClockVersion.id = "jclockversion";
   jClockVersion.innerHTML = " v1.0.5";
+  document.getElementById("jclockfooter").appendChild(jclocklink);
   
   startTime();
 
