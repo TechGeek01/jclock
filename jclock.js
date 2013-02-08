@@ -20,7 +20,7 @@
   var jClockVersion = document.createElement("span");
   jClockVersion.id = "jclockversion";
   jClockVersion.innerHTML = " v1.0.5";
-  document.getElementById("jclockfooter").appendChild(jClockLink);
+  //document.getElementById("jclockfooter").appendChild(jClockLink);
   
   startTime();
 
