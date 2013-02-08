@@ -1,72 +1,73 @@
 /***************************
-*   jClock v1.0.1 rev. 3   *
-*          1-6-13          *
+*   jClock v1.0.2 rev. 1   *
+*          2-7-13          *
 ***************************/
 
-function initialSet(){
-  var currentVersion=1.0;
-  var today=new Date();
-  var staticYear=today.getFullYear();
-  var staticMonth=today.getMonth();
-  var staticDate=today.getDate();
-  startTime();
-}
+//Deprecated
+function initialSet();
 
+//Immediately set variables and run clocka
+(function(){
+  var today = new Date();
+  var staticYear = today.getFullYear();
+  var staticMonth = today.getMonth();
+  var staticDate = today.getDate();
+  startTime();
+})();
+
+//Calculate and set clock times
 function startTime(){
-  var today=new Date();
-  var year=today.getFullYear();
-  var month=today.getMonth()+1;
-  var date=today.getDate();
-  var h24=today.getHours();
-  var h12=today.getHours();
-  var m=checkTime(today.getMinutes());
-  var s=checkTime(today.getSeconds());
-  var state="AM";
-  if (h12>11){
-    state="PM";
+  var today = new Date();
+  var year = today.getFullYear();
+  var month = today.getMonth()+1;
+  var date = today.getDate();
+  var h24 = today.getHours();
+  var h12 = today.getHours();
+  var m = checkTime(today.getMinutes());
+  var s = checkTime(today.getSeconds());
+  var state = "AM";
+  if (h12 > 11){
+    state = "PM";
   }
-  if (h12>12){
-    h12=h12-12;
+  if (h12 > 12){
+    h12 = h12 - 12;
   }
-  try{document.getElementById("float24clock").innerHTML=h24+":"+m;}catch(err){}
-  try{document.getElementById("float12clock").innerHTML=h12+":"+m+" "+state;}catch(err){}
-  try{document.getElementById("float24clockdark").innerHTML=h24+":"+m;}catch(err){}
-  try{document.getElementById("float12clockdark").innerHTML=h12+":"+m+" "+state;}catch(err){}
-  replaceContent("24clock",h24+":"+m+":"+s);
-  replaceContent("12clock",h12+":"+m+":"+s+" "+state);
+  try{document.getElementById("float24clock").innerHTML = h24 + ":" + m;}catch(err){}
+  try{document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;}catch(err){}
+  try{document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;}catch(err){}
+  try{document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;}catch(err){}
+  replaceContent("24clock",h24 + ":" + m +":" + s);
+  replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
   floatStyle("float24clock");
   floatStyle("float12clock");
   floatStyle("float24clockdark");
   floatStyle("float12clockdark");
-  t=setTimeout(function (){startTime();},500);
+  t = setTimeout(function (){startTime();},500);
 }
 
 function replaceContent(matchClass, content){
-  var elems=document.getElementsByTagName('*'),i;
+  var elems = document.getElementsByTagName('*'),i;
   for (i in elems){
-    if ((" "+elems[i].className+" ").indexOf(" "+matchClass+" ")>-1){
-      elems[i].innerHTML=content;
+    if ((" " + elems[i].className + " ").indexOf(" " + matchClass + " ") > -1){
+      elems[i].innerHTML = content;
     }
   }
 }
 
 function checkTime(i){
-  if (i<10){
-    i="0"+i;
+  if (i < 10){
+    i = "0"+i;
   }
   return i;
 }
 
-function viewport(i){
-  if(i==="width"){
-    return document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth;
-  }else if(i==="height"){
-    return  document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight;
-  }
-}
+var viewport = {
+  width: document.documentElement.clientWidth || document.body.clientWidth || window.innerWidth,
+  height: document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight
+};
 
 function floatStyle(i){
-  var viewportHeight=viewport("height");
+  var viewportHeight=viewport.height;
   var verticalFloatPos=viewportHeight-59;
   verticalFloatPos=verticalFloatPos.toString();
   var clockColor="000000";
