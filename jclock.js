@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.5 rev. 1   *
+*   jClock v1.0.5 rev. 2   *
 *          2-7-13          *
 ***************************/
 
@@ -17,7 +17,6 @@
   jClockLink.setAttribute("target","_blank");
   jClockLink.innerHTML = "jClock";
   var jClockVersion = document.createElement("span");
-  jClockVersion.id = "jclockver";
   jClockVersion.innerHTML = " v1.0.5";
   document.body.appendChild(jClockFooter);
   document.getElementById("jclockfooter").appendChild(jClockLink);
