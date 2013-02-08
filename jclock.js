@@ -13,9 +13,16 @@ function initialSet(){
   var jClockVersion = document.createElement("span");
   jClockVersion.innerHTML = " v1.0.5";
   document.body.appendChild(jClockFooter);
-  document.getElementById("jclockfooter").appendChild(jClockLink);
-  document.getElementById("jclockfooter").appendChild(jClockVersion);
-  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
+  try{
+    document.getElementById("footer").appendChild(jClockFooter);
+    document.getElementById("jclockfooter").appendChild(jClockLink);
+    document.getElementById("jclockfooter").appendChild(jClockVersion);
+  } catch (err){
+    document.body.appendChild(jClockFooter);
+    document.getElementById("jclockfooter").appendChild(jClockLink);
+    document.getElementById("jclockfooter").appendChild(jClockVersion);
+    document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
+  }
 }
 
 (function(){
