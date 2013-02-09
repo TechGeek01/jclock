@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.6 rev. 7   *
+*   jClock v1.0.7 rev. 0   *
 *          2-7-13          *
 ***************************/
 
@@ -16,7 +16,7 @@ function initialSet(){
     document.body.appendChild(jClockFooter);
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   }
-  document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.6";
+  document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.7";
 }
 
 (function(){
@@ -46,23 +46,26 @@ function initialSet(){
       h12 = h12 - 12;
     }
     try {
-      document.getElementById("float24clock").innerHTML = h24 + ":" + m;
-    } catch (err){}
-    try {
-      document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;
-    } catch (err){}
-    try {
-      document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;
-    } catch (err){}
-    try {
       document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
-    } catch (err){}
+      floatStyle("float12clockdark");
+    } catch (err){
+      try {
+        document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;
+        floatStyle("float12clock");
+      } catch (err){
+        try {
+          document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;
+          floatStyle("float24clockdark");
+        } catch (err){
+          try {
+            document.getElementById("float24clock").innerHTML = h24 + ":" + m;
+            floatStyle("float24clock");
+          } catch (err){}
+        }
+      }
+    }
     replaceContent("24clock",h24 + ":" + m +":" + s);
     replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
-    floatStyle("float24clock");
-    floatStyle("float12clock");
-    floatStyle("float24clockdark");
-    floatStyle("float12clockdark");
     t = setTimeout(function (){startTime();},500);
   }
   //Change the innerHTML of any item with class matchClass to content
