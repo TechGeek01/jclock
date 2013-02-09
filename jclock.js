@@ -4,7 +4,7 @@
 ***************************/
 
 //Hey, all you source viewers!
-function initialSet(){
+/*function initialSet(){
   try{
     var jClockFooter = document.createElement("p");
     jClockFooter.id = "jclockfooter";
@@ -16,7 +16,7 @@ function initialSet(){
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   }
   document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.7";
-}
+}*/
 
 (function(){
   //Set static variables and start clock
