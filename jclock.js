@@ -19,15 +19,17 @@ function initialSet(){
   } catch (err){*/
     var jClockFooter = document.createElement("div");
     jClockFooter.id = "jclockfooter";
-    var jClockLink = document.createElement("a");
-    jClockLink.innerHTML = "jClock";
-    jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
-    jClockLink.setAttribute("target", "_blank");
-    var jClockVersion = document.createElement("span");
-    jClockVersion.innerHTML = " v1.0.6";
     document.body.appendChild(jClockFooter);
-    document.getElementById("jclockfooter").appendChild(jClockLink);
-    document.getElementById("jclockfooter").appendChild(jClockVersion);
+    document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.6";
+    //var jClockLink = document.createElement("a");
+    //jClockLink.innerHTML = "jClock";
+    //jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
+    //jClockLink.setAttribute("target", "_blank");
+    //var jClockVersion = document.createElement("span");
+    //jClockVersion.innerHTML = " v1.0.6";
+    //document.body.appendChild(jClockFooter);
+    //document.getElementById("jclockfooter").appendChild(jClockLink);
+    //document.getElementById("jclockfooter").appendChild(jClockVersion);
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   //}
 }
