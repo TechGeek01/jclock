@@ -8,8 +8,6 @@ function initialSet(){
     var jClockFooter = document.createElement("p");
     jClockFooter.id = "jclockfooter";
     document.getElementById("footer").appendChild(jClockFooter);
-    document.getElementById("jclockfooter").appendChild(jClockLink);
-    document.getElementById("jclockfooter").appendChild(jClockVersion);
   } catch (err){
     var jClockFooter = document.createElement("div");
     jClockFooter.id = "jclockfooter";
@@ -25,7 +23,6 @@ function initialSet(){
   var staticYear = today.getFullYear();
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
-  
   startTime();
   
   //Calculate and set clock times
@@ -68,6 +65,7 @@ function initialSet(){
     replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
     t = setTimeout(function (){startTime();},500);
   }
+  
   //Change the innerHTML of any item with class matchClass to content
   function replaceContent(matchClass, content){
     var elems = document.getElementsByTagName('*'),i;
@@ -77,6 +75,7 @@ function initialSet(){
       }
     }
   }
+  
   //Add 0 in front of minutes and seconds less than 10
   function checkTime(i){
     if (i < 10){
@@ -84,6 +83,7 @@ function initialSet(){
     }
     return i;
   }
+  
   //Detect the veiwport dimmensions in-browser
   function viewport(i){
     if (i === "width"){
@@ -92,6 +92,7 @@ function initialSet(){
       return document.documentElement.clientHeight || document.body.clientHeight || window.innerHeight;
     }
   }
+  
   //Process the floating clock types
   function floatStyle(i){
     var viewportHeight = viewport("height");
