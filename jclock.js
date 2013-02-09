@@ -1,36 +1,33 @@
 /***************************
-*   jClock v1.0.6 rev. 5   *
-*          2-7-13          *
+* jClock v1.0.6 rev. 5 *
+* 2-7-13 *
 ***************************/
 
 function initialSet(){
   try{
-    document.getElementById("footer");
-    var existingFooter = "id";
-  } catch (err){
-    var existingFooter = "none";
-  }
-  if (existingFooter === "id"){
     var jClockFooter = document.createElement("p");
-  } else {
-    var jClockFooter = document.createElement("div");
-  }
-  jClockFooter.id = "jclockfooter";
-  var jClockLink = document.createElement("a");
-  jClockLink.innerHTML = "jClock";
-  jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
-  jClockLink.setAttribute("target", "_blank");
-  var jClockVersion = document.createElement("span");
-  jClockVersion.innerHTML = " v1.0.5";
-  if (existingFooter === "id"){
+    jClockFooter.id = "jclockfooter";
+    var jClockLink = document.createElement("a");
+    jClockLink.innerHTML = "jClock";
+    jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
+    jClockLink.setAttribute("target", "_blank");
+    var jClockVersion = document.createElement("span");
+    jClockVersion.innerHTML = " v1.0.5";
     document.getElementById("footer").appendChild(jClockFooter);
-  } else {
-    document.body.appendChild(jClockFooter);
-  }
-  document.getElementById("jclockfooter").appendChild(jClockLink);
-  document.getElementById("jclockfooter").appendChild(jClockVersion);
+    document.getElementById("jclockfooter").appendChild(jClockLink);
+    document.getElementById("jclockfooter").appendChild(jClockVersion);
   } catch (err){
-  if (existingFooter === "none"){
+    var jClockFooter = document.createElement("div");
+    jClockFooter.id = "jclockfooter";
+    var jClockLink = document.createElement("a");
+    jClockLink.innerHTML = "jClock";
+    jClockLink.setAttribute("href", "https://techgeek01.github.com/jclock");
+    jClockLink.setAttribute("target", "_blank");
+    var jClockVersion = document.createElement("span");
+    jClockVersion.innerHTML = " v1.0.5";
+    document.body.appendChild(jClockFooter);
+    document.getElementById("jclockfooter").appendChild(jClockLink);
+    document.getElementById("jclockfooter").appendChild(jClockVersion);
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   }
 }
