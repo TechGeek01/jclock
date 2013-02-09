@@ -4,7 +4,7 @@
 ***************************/
 
 function initialSet(){
-  try{
+  /*try{
     var jClockFooter = document.createElement("p");
     jClockFooter.id = "jclockfooter";
     var jClockLink = document.createElement("a");
@@ -16,7 +16,7 @@ function initialSet(){
     document.getElementById("footer").appendChild(jClockFooter);
     document.getElementById("jclockfooter").appendChild(jClockLink);
     document.getElementById("jclockfooter").appendChild(jClockVersion);
-  } catch (err){
+  } catch (err){*/
     var jClockFooter = document.createElement("div");
     jClockFooter.id = "jclockfooter";
     var jClockLink = document.createElement("a");
@@ -29,7 +29,7 @@ function initialSet(){
     document.getElementById("jclockfooter").appendChild(jClockLink);
     document.getElementById("jclockfooter").appendChild(jClockVersion);
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
-  }
+  //}
 }
 
 (function(){
