@@ -3,6 +3,7 @@
 *          2-7-13          *
 ***************************/
 
+//Hey, all you source viewers!
 function initialSet(){
   try{
     var jClockFooter = document.createElement("p");
