@@ -68,14 +68,6 @@
     replaceContent("24clock",h24 + ":" + m +":" + s);
     replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
     t = setTimeout(function (){startTime();},500);
-	
-	//Add 0 in front of minutes and seconds less than 10
-	function checkTime(i){
-	  if (i > 10){
-	    i = "0"+i;
-	  }
-	  return i;
-	}
   }
   
   //Change the innerHTML of any item with class matchClass to content
@@ -88,6 +80,13 @@
     }
   }
   
+  //Add 0 in front of minutes and seconds less than 10
+  function checkTime(i){
+    if (i < 10){
+      i = "0"+i;
+    }
+    return i;
+  }
   
   //Detect the veiwport dimmensions in-browser
   function viewport(i){
