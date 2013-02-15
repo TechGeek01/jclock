@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.7 rev. 3   *
+*   jClock v1.0.8 rev. 0   *
 *          2-7-13          *
 ***************************/
 
@@ -7,7 +7,7 @@
 
 //Currently deprecated, though this may return in a later version
 /*function initialSet(){
-  try{
+  try {
     var jClockFooter = document.createElement("p");
     jClockFooter.id = "jclockfooter";
     document.getElementById("footer").appendChild(jClockFooter);
@@ -17,7 +17,7 @@
     document.body.appendChild(jClockFooter);
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   }
-  document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.7";
+  document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.8";
 }*/
 
 (function(){
@@ -61,7 +61,27 @@
           try {
             document.getElementById("float24clock").innerHTML = h24 + ":" + m;
             floatStyle("float24clock");
-          } catch (err){}
+          } catch (err){
+		    try {
+              document.getElementById("float12clockrightdark").innerHTML = h12 + ":" + m + " " + state;
+              floatStyle("float12clockdark");
+            } catch (err){
+              try {
+                document.getElementById("float12clockright").innerHTML = h12 + ":" + m + " " + state;
+                floatStyle("float12clock");
+              } catch (err){
+                try {
+                  document.getElementById("float24clockrightdark").innerHTML = h24 + ":" + m;
+                  floatStyle("float24clockdark");
+                } catch (err){
+                  try {
+                    document.getElementById("float24clockright").innerHTML = h24 + ":" + m;
+                    floatStyle("float24clock");
+                  } catch (err){}
+				}
+		      }
+			}
+		  }
         }
       }
     }
@@ -102,12 +122,23 @@
     var viewportHeight = viewport("height");
     var verticalFloatPos = viewportHeight-59;
     verticalFloatPos = verticalFloatPos.toString();
-    var clockColor = "000000";
-    if(i === "float24clock" || i === "float12clock"){
-      clockColor = "ffffff";
-    }
-    try{
-      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
+	
+	//Set floating clock color
+    if (i === "float24clock" || i === "float12clock" || i === "float12clockright" || i === "float24clockright"){
+      var clockColor = "ffffff";
+    } else {
+	  var clockColor = "000000";
+	}
+	
+	//Set floating clock position
+	if (i === "float12clockright" || i === "float24clockright" || i === "float12clockrightdark" || i === "float24clockrightdark"){
+	  var horizPosition = "right";
+	} else {
+	  var horizPosition = "left";
+	}
+	
+    try {
+      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;" + horizPosition + ":10px;z-index:200;";
     } catch (err){}
   }
 }());
