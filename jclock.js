@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.7 rev. 2   *
+*   jClock v1.0.7 rev. 3   *
 *          2-7-13          *
 ***************************/
 
@@ -30,6 +30,7 @@
   
   //Calculate and set clock times
   function startTime(){
+    var today = new Date();
     var year = today.getFullYear();
     var month = today.getMonth()+1;
     var date = today.getDate();
