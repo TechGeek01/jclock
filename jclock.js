@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.8 rev. 1   *
+*   jClock v1.0.8 rev. 2   *
 *          2-7-13          *
 ***************************/
 
@@ -61,27 +61,7 @@
           try {
             document.getElementById("float24clock").innerHTML = h24 + ":" + m;
             floatStyle("float24clock");
-          } catch (err){
-		    try {
-              document.getElementById("float12clockrightdark").innerHTML = h12 + ":" + m + " " + state;
-              floatStyle("float12clockdark");
-            } catch (err){
-              try {
-                document.getElementById("float12clockright").innerHTML = h12 + ":" + m + " " + state;
-                floatStyle("float12clock");
-              } catch (err){
-                try {
-                  document.getElementById("float24clockrightdark").innerHTML = h24 + ":" + m;
-                  floatStyle("float24clockdark");
-                } catch (err){
-                  try {
-                    document.getElementById("float24clockright").innerHTML = h24 + ":" + m;
-                    floatStyle("float24clock");
-                  } catch (err){}
-				}
-		      }
-			}
-		  }
+          } catch (err){}
         }
       }
     }
@@ -124,21 +104,14 @@
     verticalFloatPos = verticalFloatPos.toString();
 	
 	//Set floating clock color
-    if (i === "float24clock" || i === "float12clock" || i === "float12clockright" || i === "float24clockright"){
+    if (i === "float24clock" || i === "float12clock"){
       var clockColor = "ffffff";
     } else {
 	  var clockColor = "000000";
 	}
 	
-	//Set floating clock position
-	if (i === "float12clock" || i === "float24clock" || i === "float12clockdark" || i === "float24clockdark"){
-	  var horizPosition = "left";
-	} else {
-	  var horizPosition = "right";
-	}
-	
     try {
-      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;" + horizPosition + ":10px;z-index:200;";
+      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
     } catch (err){}
   }
 }());
