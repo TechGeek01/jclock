@@ -1,9 +1,11 @@
 /***************************
-*   jClock v1.0.7 rev. 1   *
+*   jClock v1.0.7 rev. 2   *
 *          2-7-13          *
 ***************************/
 
 //Hey, all you source viewers!
+
+//Currently deprecated, though this may return in a later version
 /*function initialSet(){
   try{
     var jClockFooter = document.createElement("p");
@@ -28,7 +30,6 @@
   
   //Calculate and set clock times
   function startTime(){
-    var today = new Date();
     var year = today.getFullYear();
     var month = today.getMonth()+1;
     var date = today.getDate();
@@ -36,10 +37,11 @@
     var h12 = today.getHours();
     var m = checkTime(today.getMinutes());
     var s = checkTime(today.getSeconds());
-    var state = "AM";
     if (h12 > 11){
-      state = "PM";
-    }
+      var state = "PM";
+    } else {
+	  var state = "AM";
+	}
     if (h12 > 12){
       h12 = h12 - 12;
     }
