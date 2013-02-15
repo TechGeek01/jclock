@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.8 rev. 0   *
+*   jClock v1.0.8 rev. 1   *
 *          2-7-13          *
 ***************************/
 
@@ -131,10 +131,10 @@
 	}
 	
 	//Set floating clock position
-	if (i === "float12clockright" || i === "float24clockright" || i === "float12clockrightdark" || i === "float24clockrightdark"){
-	  var horizPosition = "right";
-	} else {
+	if (i === "float12clock" || i === "float24clock" || i === "float12clockdark" || i === "float24clockdark"){
 	  var horizPosition = "left";
+	} else {
+	  var horizPosition = "right";
 	}
 	
     try {
