@@ -5,8 +5,10 @@
 
 //Hey, all you source viewers!
 
-//Currently deprecated, though this may return in a later version
-/*function initialSet(){
+function initialSet(){
+  //Currently deprecated, though this may return in a later version
+  /*
+  //Append footer information to page
   try {
     var jClockFooter = document.createElement("p");
     jClockFooter.id = "jclockfooter";
@@ -18,14 +20,17 @@
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   }
   document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.8";
-}*/
+  */
+}
 
 (function(){
-  //Set static variables and start clock
+  //Set static variables
   var today = new Date();
   var staticYear = today.getFullYear();
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
+  
+  //Start clocks
   startTime();
   
   //Calculate and set clock times
@@ -66,6 +71,7 @@
         }
       }
     }
+	
 	//replaceContent("","&#106;&#67;&#108;&#111;&#99;&#107;&#32;&#105;&#115;&#32;&#97;&#119;&#101;&#115;&#111;&#109;&#101;&#33;");
     replaceContent("24clock",h24 + ":" + m +":" + s);
     replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
