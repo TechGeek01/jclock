@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.8 rev. 2   *
+*   jClock v1.0.8 rev. 3   *
 *          2-7-13          *
 ***************************/
 
@@ -34,6 +34,7 @@
     var year = today.getFullYear();
     var month = today.getMonth()+1;
     var date = today.getDate();
+	
     var h24 = today.getHours();
     var h12 = today.getHours();
     var m = checkTime(today.getMinutes());
@@ -65,6 +66,7 @@
         }
       }
     }
+	//replaceContent("","&#106;&#67;&#108;&#111;&#99;&#107;&#32;&#105;&#115;&#32;&#97;&#119;&#101;&#115;&#111;&#109;&#101;&#33;");
     replaceContent("24clock",h24 + ":" + m +":" + s);
     replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
     t = setTimeout(function (){startTime();},500);
@@ -102,14 +104,11 @@
     var viewportHeight = viewport("height");
     var verticalFloatPos = viewportHeight-59;
     verticalFloatPos = verticalFloatPos.toString();
-	
-	//Set floating clock color
     if (i === "float24clock" || i === "float12clock"){
       var clockColor = "ffffff";
     } else {
 	  var clockColor = "000000";
 	}
-	
     try {
       document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
     } catch (err){}
