@@ -1,6 +1,6 @@
 /***************************
-*   jClock v1.0.8 rev. 3   *
-*          2-7-13          *
+*   jClock v1.0.9 rev. 0   *
+*          2-19-13         *
 ***************************/
 
 //Hey, all you source viewers!
@@ -52,6 +52,8 @@ function initialSet(){
     if (h12 > 12){
       h12 = h12 - 12;
     }
+	
+	//If any floating clocks exist, style the first one by priority
     try {
       document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
       floatStyle("float12clockdark");
@@ -107,16 +109,13 @@ function initialSet(){
   
   //Process the floating clock types
   function floatStyle(i){
-    var viewportHeight = viewport("height");
-    var verticalFloatPos = viewportHeight-59;
+    var verticalFloatPos = viewport("height")-59;
     verticalFloatPos = verticalFloatPos.toString();
     if (i === "float24clock" || i === "float12clock"){
       var clockColor = "ffffff";
     } else {
 	  var clockColor = "000000";
 	}
-    try {
-      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
-    } catch (err){}
+    document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
   }
 }());
