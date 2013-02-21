@@ -1,7 +1,3 @@
-# [jClock](http://techgeek01.github.com/jclock)
-
-I can haz time
-
 # jClock
 
 This little clock can be used as both a 12- or 24-hour display, as well as a trigger for time-based events on your website.
