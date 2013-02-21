@@ -1,6 +1,6 @@
 /***************************
-*   jClock v1.1.0 rev. 0   *
-*          2-19-13         *
+*   jClock v1.1.0 rev. 3   *
+*          2-20-13         *
 ***************************/
 
 //Hey, all you source viewers!
@@ -19,7 +19,7 @@ function initialSet(){
     document.body.appendChild(jClockFooter);
     document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
   }
-  document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.8";
+  document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.1.0";
   */
 }
 
@@ -56,19 +56,19 @@ function initialSet(){
 	//If any floating clocks exist, style the first one by priority
     try {
       document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
-      floatStyle("float12clockdark", "left");
+      floatStyle("float12clockdark");
     } catch (err){
       try {
         document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;
-        floatStyle("float12clock", "left");
+        floatStyle("float12clock");
       } catch (err){
         try {
           document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;
-          floatStyle("float24clockdark", "left");
+          floatStyle("float24clockdark");
         } catch (err){
           try {
             document.getElementById("float24clock").innerHTML = h24 + ":" + m;
-            floatStyle("float24clock", "left");
+            floatStyle("float24clock");
           } catch (err){}
         }
       }
@@ -109,7 +109,7 @@ function initialSet(){
   }
   
   //Process the floating clock types
-  function floatStyle(i, dir){
+  function floatStyle(i){
     var verticalFloatPos = viewport("height")-59;
     verticalFloatPos = verticalFloatPos.toString();
 	horizontalFloatPos = 0;
@@ -118,6 +118,6 @@ function initialSet(){
     } else {
 	  var clockColor = "000000";
 	}
-      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;padding-" + dir + ":10px!important;left:0px;z-index:200;width:100%;text-align:" + dir + ";";
+      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;padding-left:10px!important;left:0px;z-index:200;width:100%;text-align:left;";
   }
 }());
