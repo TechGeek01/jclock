@@ -1,2 +1,3 @@
-jClock - I can haz time
+# jClock
+I can haz time
 ================
