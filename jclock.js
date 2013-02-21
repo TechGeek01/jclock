@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.1.0 rev. 3   *
+*   jClock v1.1.0 rev. 4   *
 *          2-20-13         *
 ***************************/
 
@@ -118,6 +118,6 @@ function initialSet(){
     } else {
 	  var clockColor = "000000";
 	}
-      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;padding-left:10px!important;left:0px;z-index:200;width:100%;text-align:left;";
+      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
   }
 }());
