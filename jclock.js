@@ -1,6 +1,6 @@
 /***************************
-*   jClock v1.0.10 rev. 6  *
-*         2-20-13          *
+*   jClock v1.1.0 rev. 0   *
+*         2-21-13          *
 ***************************/
 
 //Hey, all you source viewers!
@@ -30,6 +30,14 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
   
+  //Initially hide config to avoid page layout issues
+  if (document.getElementById("jclockconfig")){
+    document.getElementById("jclockconfig").style = "display:none;";
+  }
+  
+  //Read data from config
+  var beta = configSetting("data-beta");
+  
   //Start clocks
   startTime();
   
@@ -39,7 +47,6 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     var year = today.getFullYear();
     var month = today.getMonth()+1;
     var date = today.getDate();
-
     var h24 = today.getHours();
     var h12 = today.getHours();
     var m = checkTime(today.getMinutes());
@@ -81,6 +88,15 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     t = setTimeout(function (){startTime();},500);
   }
   
+  //Check the value of config settings
+  function configSetting(i){
+    if (document.getElementById("jclockconfig") && document.getElementById("jclockconfig").getAttribute(i)){
+	  return document.getElementById("jclockconfig").getAttribute(i);
+	} else {
+	  return "no";
+	}
+  }
+  
   //Change the innerHTML of any item with class matchClass to content
   function replaceContent(matchClass, content){
     var elems = document.getElementsByTagName('*'),i;
@@ -94,7 +110,7 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   //Add 0 in front of minutes and seconds less than 10
   function checkTime(i){
     if (i < 10){
-      i = "0"+i;
+      i = "0" + i;
     }
     return i;
   }
