@@ -53,7 +53,7 @@ function initialSet(){
       h12 = h12 - 12;
     }
 	
-	//If any left-floating clocks exist, style the first one by priority
+	//If any floating clocks exist, style the first one by priority
     try {
       document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
       floatStyle("float12clockdark", "left");
@@ -69,27 +69,6 @@ function initialSet(){
           try {
             document.getElementById("float24clock").innerHTML = h24 + ":" + m;
             floatStyle("float24clock", "left");
-          } catch (err){}
-        }
-      }
-    }
-	
-	//If any right-floating clocks exist, style the first one by priority
-	try {
-      document.getElementById("float12clockdarkright").innerHTML = h12 + ":" + m + " " + state;
-      floatStyle("float12clockdark", "right");
-    } catch (err){
-      try {
-        document.getElementById("float12clockright").innerHTML = h12 + ":" + m + " " + state;
-        floatStyle("float12clock", "right");
-      } catch (err){
-        try {
-          document.getElementById("float24clockdarkright").innerHTML = h24 + ":" + m;
-          floatStyle("float24clockdark", "right");
-        } catch (err){
-          try {
-            document.getElementById("float24clockright").innerHTML = h24 + ":" + m;
-            floatStyle("float24clock", "right");
           } catch (err){}
         }
       }
