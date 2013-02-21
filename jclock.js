@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.10 rev. 5  *
+*   jClock v1.0.10 rev. 6  *
 *         2-20-13          *
 ***************************/
 
@@ -47,13 +47,13 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     if (h12 > 11){
       var state = "PM";
     } else {
-var state = "AM";
-}
+	  var state = "AM";
+	}
     if (h12 > 12){
       h12 = h12 - 12;
     }
 
-//If any floating clocks exist, style the first one by priority
+    //If any floating clocks exist, style the first one by priority
     try {
       document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
       floatStyle("float12clockdark");
@@ -73,9 +73,9 @@ var state = "AM";
         }
       }
     }
-
-replaceContent("\x6A\x63\x6C\x6F\x63\x65\x61\x73\x74\x65\x72\x65\x67\x67","\x6A\x43\x6C\x6F\x63\x6B\x20\x69\x73\x20\x61\x77\x65\x73\x6F\x6D\x65\x21");
-//replaceContent("\x65\x61\x73\x74\x65\x72\x65\x67\x67","&#106;&#67;&#108;&#111;&#99;&#107;&#32;&#105;&#115;&#32;&#97;&#119;&#101;&#115;&#111;&#109;&#101;&#33;");
+	
+    replaceContent("\x6A\x63\x6C\x6F\x63\x65\x61\x73\x74\x65\x72\x65\x67\x67","\x6A\x43\x6C\x6F\x63\x6B\x20\x69\x73\x20\x61\x77\x65\x73\x6F\x6D\x65\x21");
+    //replaceContent("\x65\x61\x73\x74\x65\x72\x65\x67\x67","&#106;&#67;&#108;&#111;&#99;&#107;&#32;&#105;&#115;&#32;&#97;&#119;&#101;&#115;&#111;&#109;&#101;&#33;");
     replaceContent("24clock",h24 + ":" + m +":" + s);
     replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
     t = setTimeout(function (){startTime();},500);
@@ -115,8 +115,8 @@ replaceContent("\x6A\x63\x6C\x6F\x63\x65\x61\x73\x74\x65\x72\x65\x67\x67","\x6A\
     if (i === "float24clock" || i === "float12clock"){
       var clockColor = "ffffff";
     } else {
-var clockColor = "000000";
-}
+      var clockColor = "000000";
+    }
     document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
   }
 }());
