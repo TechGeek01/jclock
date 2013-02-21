@@ -1,2 +1,2 @@
-jClock
+jClock - I can haz time
 ================
