@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.0.10 rev. 0  *
+*   jClock v1.1.0 rev. 0   *
 *          2-19-13         *
 ***************************/
 
@@ -53,22 +53,43 @@ function initialSet(){
       h12 = h12 - 12;
     }
 	
-	//If any floating clocks exist, style the first one by priority
+	//If any left-floating clocks exist, style the first one by priority
     try {
       document.getElementById("float12clockdark").innerHTML = h12 + ":" + m + " " + state;
-      floatStyle("float12clockdark");
+      floatStyle("float12clockdark", "left");
     } catch (err){
       try {
         document.getElementById("float12clock").innerHTML = h12 + ":" + m + " " + state;
-        floatStyle("float12clock");
+        floatStyle("float12clock", "left");
       } catch (err){
         try {
           document.getElementById("float24clockdark").innerHTML = h24 + ":" + m;
-          floatStyle("float24clockdark");
+          floatStyle("float24clockdark", "left");
         } catch (err){
           try {
             document.getElementById("float24clock").innerHTML = h24 + ":" + m;
-            floatStyle("float24clock");
+            floatStyle("float24clock", "left");
+          } catch (err){}
+        }
+      }
+    }
+	
+	//If any right-floating clocks exist, style the first one by priority
+	try {
+      document.getElementById("float12clockdarkright").innerHTML = h12 + ":" + m + " " + state;
+      floatStyle("float12clockdark", "right");
+    } catch (err){
+      try {
+        document.getElementById("float12clockright").innerHTML = h12 + ":" + m + " " + state;
+        floatStyle("float12clock", "right");
+      } catch (err){
+        try {
+          document.getElementById("float24clockdarkright").innerHTML = h24 + ":" + m;
+          floatStyle("float24clockdark", "right");
+        } catch (err){
+          try {
+            document.getElementById("float24clockright").innerHTML = h24 + ":" + m;
+            floatStyle("float24clock", "right");
           } catch (err){}
         }
       }
@@ -109,14 +130,15 @@ function initialSet(){
   }
   
   //Process the floating clock types
-  function floatStyle(i){
+  function floatStyle(i, dir){
     var verticalFloatPos = viewport("height")-59;
     verticalFloatPos = verticalFloatPos.toString();
+	horizontalFloatPos = 0;
     if (i === "float24clock" || i === "float12clock"){
       var clockColor = "ffffff";
     } else {
 	  var clockColor = "000000";
 	}
-    document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
+      document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:arial;position:fixed;top:" + verticalFloatPos + "px;padding-" + dir + ":10px!important;left:0px;z-index:200;width:100%;text-align:" + dir + ";";
   }
 }());
