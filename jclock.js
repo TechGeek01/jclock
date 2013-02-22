@@ -134,7 +134,7 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   
   //Process the floating clock types
   function floatStyle(i){
-    var verticalFloatPos = viewport("height")-59;
+    var verticalFloatPos = viewport("height")-64;
     verticalFloatPos = verticalFloatPos.toString();
     if (i === "float24clock" || i === "float12clock"){
       var clockColor = "ffffff";
