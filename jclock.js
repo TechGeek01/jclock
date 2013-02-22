@@ -141,6 +141,6 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     } else {
       var clockColor = "000000";
     }
-    document.getElementById(i).style.cssText = "font-size:50px;color:#" + clockColor + ";font-family:'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
+    document.getElementById(i).style.cssText = "font-size:55px;color:#" + clockColor + ";font-family:'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;position:fixed;top:" + verticalFloatPos + "px;left:10px;z-index:200;";
   }
 }());
