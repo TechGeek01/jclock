@@ -19,8 +19,8 @@ Adding a clock is easy. Simply set up the framework for one or more of these clo
 * Class of `12clock` - 12-hour clock
 * ID of `float24clock` - Large 24-hour clock that will stick in the bottom left corner of the window
 * ID of `float12clock` - Large 12-hour clock that will stick in the bottom left corner of the window
-* ID of `float24clock` - Large 24-hour clock with black font that will stick in the bottom left corner of the window
-* ID of `float12clock` - Large 12-hour clock with black font that will stick in the bottom left corner of the window
+* ID of `float24clockdark` - Large 24-hour clock with black font that will stick in the bottom left corner of the window
+* ID of `float12clockdark` - Large 12-hour clock with black font that will stick in the bottom left corner of the window
 
 ### Trigger timed events
 If your site has JavaScript-handled events, you can trigger them with jClock simply by nesting your action within an if statement, and using one or more of the variables `staticYear`, `staticMonth`, `staticDate`, `year`, `month`, `date`, `h24`, `m`, or `s` as the trigger.
