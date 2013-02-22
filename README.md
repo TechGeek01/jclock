@@ -8,7 +8,7 @@ To implement this script, simply stick `<script type="text/javascript" src="http
 
 ## Usage
 
-To use jClock, you can interact with the script in one of two ways.
+To use jClock, you can interact with the script in one of three ways.
 
 ### Display a clock
 
