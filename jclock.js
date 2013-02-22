@@ -93,15 +93,15 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   //Check the value of config settings
   function configSetting(i, yesNo){
     if (document.getElementById("jclockconfig") && document.getElementById("jclockconfig").getAttribute(i)){
-	  if (yesNo === true){
-	    if (document.getElementById("jclockconfig").getAttribute(i) === "yes" {
-		  return "yes";
+      if (yesNo === true){
+        if (document.getElementById("jclockconfig").getAttribute(i) === "yes") {
+          return "yes";
 		} else {
-		  return "no";
+          return "no";
 		}
-	  } else {
-	    return document.getElementById("jclockconfig").getAttribute(i);
-	  }
+      } else {
+        return document.getElementById("jclockconfig").getAttribute(i);
+      }
 	}
   }
   
