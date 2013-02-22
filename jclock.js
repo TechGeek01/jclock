@@ -1,6 +1,6 @@
 /***************************
-*   jClock v1.1.1 rev. 0   *
-*         2-21-13          *
+*   jClock v1.1.1 rev. 2   *
+*         2-22-13          *
 ***************************/
 
 //Hey, all you source viewers!
@@ -91,8 +91,16 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   }
   
   //Control beta features
-  function beta(){
-    
+  function betaHandler(i){
+    if (beta === "yes"){
+	  if (i === "preload"){
+	    
+	  } else if (i === "clock"){
+	    
+	  } else if (I === "init"){
+        
+      }
+	}
   }
   
   //Check the value of config settings
@@ -107,6 +115,8 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
       } else {
         return document.getElementById("jclockconfig").getAttribute(i);
       }
+	} else {
+	  return false;
 	}
   }
   
