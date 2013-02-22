@@ -90,6 +90,11 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     t = setTimeout(function (){startTime();},500);
   }
   
+  //Control beta features
+  function beta(){
+    
+  }
+  
   //Check the value of config settings
   function configSetting(i, yesNo){
     if (document.getElementById("jclockconfig") && document.getElementById("jclockconfig").getAttribute(i)){
