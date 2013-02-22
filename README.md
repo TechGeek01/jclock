@@ -17,6 +17,8 @@ Adding a clock is easy. Simply set up the framework for one or more of these clo
 
 * Class of `24clock` - 24-hour clock
 * Class of `12clock` - 12-hour clock
+* Class of `24clocksec` - 24-hour clock with seconds
+* Class of `12clocksec` - 12-hour clock with seconds
 * ID of `float24clock` - Large 24-hour clock that will stick in the bottom left corner of the window
 * ID of `float12clock` - Large 12-hour clock that will stick in the bottom left corner of the window
 * ID of `float24clockdark` - Large 24-hour clock with black font that will stick in the bottom left corner of the window
