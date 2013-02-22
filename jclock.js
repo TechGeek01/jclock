@@ -1,5 +1,5 @@
 /***************************
-*   jClock v1.1.0 rev. 0   *
+*   jClock v1.1.1 rev. 0   *
 *         2-21-13          *
 ***************************/
 
@@ -30,13 +30,13 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
   
-  //Initially hide config to avoid page layout issues
+  //Hide config if present
   if (document.getElementById("jclockconfig")){
     document.getElementById("jclockconfig").style = "display:none;";
   }
   
-  //Read data from config
-  var beta = configSetting("data-beta");
+  //Import parameters
+  var beta = configSetting("data-beta", true);
   
   //Start clocks
   startTime();
@@ -83,17 +83,25 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
 	
     replaceContent("\x6A\x63\x6C\x6F\x63\x65\x61\x73\x74\x65\x72\x65\x67\x67","\x6A\x43\x6C\x6F\x63\x6B\x20\x69\x73\x20\x61\x77\x65\x73\x6F\x6D\x65\x21");
     //replaceContent("\x65\x61\x73\x74\x65\x72\x65\x67\x67","&#106;&#67;&#108;&#111;&#99;&#107;&#32;&#105;&#115;&#32;&#97;&#119;&#101;&#115;&#111;&#109;&#101;&#33;");
-    replaceContent("24clock",h24 + ":" + m +":" + s);
-    replaceContent("12clock",h12 + ":" + m + ":" + s + " " + state);
+	replaceContent("24clock",h24 + ":" + m);
+    replaceContent("12clock",h12 + ":" + m + " " + state);
+    replaceContent("24clocksec",h24 + ":" + m +":" + s);
+    replaceContent("12clocksec",h12 + ":" + m + ":" + s + " " + state);
     t = setTimeout(function (){startTime();},500);
   }
   
   //Check the value of config settings
-  function configSetting(i){
+  function configSetting(i, yesNo){
     if (document.getElementById("jclockconfig") && document.getElementById("jclockconfig").getAttribute(i)){
-	  return document.getElementById("jclockconfig").getAttribute(i);
-	} else {
-	  return "no";
+	  if (yesNo === true){
+	    if (document.getElementById("jclockconfig").getAttribute(i) === "yes" {
+		  return "yes";
+		} else {
+		  return "no";
+		}
+	  } else {
+	    return document.getElementById("jclockconfig").getAttribute(i);
+	  }
 	}
   }
   
