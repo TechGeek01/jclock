@@ -1,26 +1,41 @@
 /***************************
-*   jClock v1.1.1 rev. 2   *
-*         2-22-13          *
+*   jClock v1.2.0 rev. 0   *
+*         2-26-13          *
 ***************************/
 
 //Hey, all you source viewers!
 
 function initialSet(){
-  //Currently deprecated, though this may return in a later version
-  /*
-//Append footer information to page
-try {
-var jClockFooter = document.createElement("p");
-jClockFooter.id = "jclockfooter";
-document.getElementById("footer").appendChild(jClockFooter);
-} catch (err){
-var jClockFooter = document.createElement("div");
-jClockFooter.id = "jclockfooter";
-document.body.appendChild(jClockFooter);
-document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
-}
-document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.0.8";
-*/
+  //Placeholder content to prevent empty function errors
+  var placeholder = true;
+  
+  //Check for config presence
+  if (document.getElementById("jclockconfig")){
+    //Set placeholder used in other functions
+    var config = true;
+	
+	//Hide config
+    document.getElementById("jclockconfig").style = "display:none;";
+	
+	//Import parameters
+	var beta = configSetting("data-beta", true);
+  }
+  
+  //Handle beta features
+  if (beta = true){
+    //Append footer information to page
+	if (document.getElementById("footer")){
+	  var jClockFooter = document.createElement("p");
+	  jClockFooter.id = "jclockfooter";
+	  document.getElementById("footer").appendChild(jClockFooter);
+	} else {
+	  var jClockFooter = document.createElement("div");
+	  jClockFooter.id = "jclockfooter";
+	  document.body.appendChild(jClockFooter);
+	  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
+	}
+	document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.2.0";
+  }
 }
 
 (function(){
@@ -30,13 +45,8 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   var staticMonth = today.getMonth();
   var staticDate = today.getDate();
   
-  //Hide config if present
-  if (document.getElementById("jclockconfig")){
-    document.getElementById("jclockconfig").style = "display:none;";
-  }
-  
-  //Import parameters
-  var beta = configSetting("data-beta", true);
+  //Default parameters
+  var beta = false;
   
   //Start clocks
   startTime();
@@ -45,7 +55,7 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
   function startTime(){
     var today = new Date();
     var year = today.getFullYear();
-    var month = today.getMonth()+1;
+    var month = today.getMonth();
     var date = today.getDate();
     var h24 = today.getHours();
     var h12 = today.getHours();
@@ -82,7 +92,6 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     }
 	
     replaceContent("\x6A\x63\x6C\x6F\x63\x65\x61\x73\x74\x65\x72\x65\x67\x67","\x6A\x43\x6C\x6F\x63\x6B\x20\x69\x73\x20\x61\x77\x65\x73\x6F\x6D\x65\x21");
-    //replaceContent("\x65\x61\x73\x74\x65\x72\x65\x67\x67","&#106;&#67;&#108;&#111;&#99;&#107;&#32;&#105;&#115;&#32;&#97;&#119;&#101;&#115;&#111;&#109;&#101;&#33;");
 	replaceContent("24clock",h24 + ":" + m);
     replaceContent("12clock",h12 + ":" + m + " " + state);
     replaceContent("24clocksec",h24 + ":" + m +":" + s);
@@ -90,33 +99,27 @@ document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.
     t = setTimeout(function (){startTime();},500);
   }
   
-  //Control beta features
-  function betaHandler(i){
-    if (beta === "yes"){
-	  if (i === "preload"){
-	    
-	  } else if (i === "clock"){
-	    
-	  } else if (I === "init"){
-        
-      }
+  //Check if parameters are valid
+  function paramCheck(parameter, successFunction){
+    if (parameter !== false){
+	  successFunction();
 	}
   }
   
   //Check the value of config settings
-  function configSetting(i, yesNo){
+  function configSetting(i, bool){
     if (document.getElementById("jclockconfig") && document.getElementById("jclockconfig").getAttribute(i)){
-      if (yesNo === true){
-        if (document.getElementById("jclockconfig").getAttribute(i) === "yes") {
-          return "yes";
+      if (bool === true){
+        if (document.getElementById("jclockconfig").getAttribute(i) === true) {
+          return true;
 		} else {
-          return "no";
+          return false;
 		}
       } else {
         return document.getElementById("jclockconfig").getAttribute(i);
       }
 	} else {
-	  return false;
+	  return "Parameter not found";
 	}
   }
   
