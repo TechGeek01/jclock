@@ -36,4 +36,4 @@ jClock allows you to add a config by creating a container with an ID of `jclockc
 
 By creating and assigning values to attributes, you can tweak jClock's performance on your site.
 
-* `data-beta` - Can be either yes or no, and will define whether or not potentially unstable features are used
+* `data-beta` - Can be either true or false, and will define whether or not potentially unstable features are used
