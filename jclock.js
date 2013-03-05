@@ -1,6 +1,6 @@
 /***************************
-*   jClock v1.2.0 rev. 0   *
-*         2-26-13          *
+*   jClock v1.2.1 rev. 0   *
+*         3-4-13          *
 ***************************/
 
 //Hey, all you source viewers!
@@ -46,6 +46,7 @@ function initialSet(){
   var staticDate = today.getDate();
   
   //Default parameters
+  var config = false;
   var beta = false;
   
   //Start clocks
