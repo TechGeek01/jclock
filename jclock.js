@@ -1,14 +1,11 @@
 /***************************
-*   jClock v1.2.1 rev. 0   *
-*         3-4-13          *
+*   jClock v1.2.1 rev. 1   *
+*         3-5-13           *
 ***************************/
 
 //Hey, all you source viewers!
 
 function initialSet(){
-  //Placeholder content to prevent empty function errors
-  var placeholder = true;
-  
   //Check for config presence
   if (document.getElementById("jclockconfig")){
     //Set placeholder used in other functions
@@ -19,10 +16,11 @@ function initialSet(){
 	
 	//Import parameters
 	var beta = configSetting("data-beta", true);
+	var 
   }
   
   //Handle beta features
-  if (beta = true){
+  if (beta = "yes"){
     //Append footer information to page
 	if (document.getElementById("footer")){
 	  var jClockFooter = document.createElement("p");
@@ -34,7 +32,7 @@ function initialSet(){
 	  document.body.appendChild(jClockFooter);
 	  document.getElementById("jclockfooter").style.cssText = "font-size:12px;font-family:Arial;text-align:center;";
 	}
-	document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.2.0";
+	document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.2.1";
   }
 }
 
@@ -108,19 +106,19 @@ function initialSet(){
   }
   
   //Check the value of config settings
-  function configSetting(i, bool){
-    if (document.getElementById("jclockconfig") && document.getElementById("jclockconfig").getAttribute(i)){
-      if (bool === true){
-        if (document.getElementById("jclockconfig").getAttribute(i) === true) {
-          return true;
+  function configSetting(i, yesNo){
+    if (config === true && document.getElementById("jclockconfig").getAttribute(i)){
+      if (yesNo === true){
+        if (document.getElementById("jclockconfig").getAttribute(i) === "yes") {
+          return "yes";
 		} else {
-          return false;
+          return "no";
 		}
       } else {
         return document.getElementById("jclockconfig").getAttribute(i);
       }
 	} else {
-	  return "Parameter not found";
+	  return false
 	}
   }
   
