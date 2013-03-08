@@ -1,11 +1,15 @@
 /***************************
-*   jClock v1.2.1 rev. 1   *
-*         3-5-13           *
+*   jClock v1.2.1 rev. 2   *
+*         3-7-13           *
 ***************************/
 
 //Hey, all you source viewers!
 
 function initialSet(){
+  //Placeholder to prevent empty function errors
+  var placeholder = true;
+  
+  /*
   //Check for config presence
   if (document.getElementById("jclockconfig")){
     //Set placeholder used in other functions
@@ -16,7 +20,6 @@ function initialSet(){
 	
 	//Import parameters
 	var beta = configSetting("data-beta", true);
-	var 
   }
   
   //Handle beta features
@@ -34,6 +37,7 @@ function initialSet(){
 	}
 	document.getElementById("jclockfooter").innerHTML = "<a href='http://techgeek01.github.com/jclock' target='_blank'>jClock</a> v1.2.1";
   }
+  */
 }
 
 (function(){
